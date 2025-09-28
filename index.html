@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบยืม-คืนอุปกรณ์กีฬา</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">SportsHub</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-target="equipment-section">รายการอุปกรณ์</a>
+                <a href="#" class="nav-link" data-target="history-section">ประวัติการยืม</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="equipment-section" class="content-section active">
+            <h1>รายการอุปกรณ์กีฬา</h1>
+            <div id="equipment-list" class="card-container">
+                </div>
+        </section>
+
+        <section id="history-section" class="content-section">
+            <h1>ประวัติการยืม-คืน</h1>
+            <div class="history-container">
+                <table id="history-table">
+                    <thead>
+                        <tr>
+                            <th>อุปกรณ์</th>
+                            <th>ประเภท</th>
+                            <th>ข้อมูลผู้ยืม</th>
+                            <th>เวลา</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+                 <p id="no-history-message" class="hidden">ยังไม่มีประวัติการยืม-คืน</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="borrow-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>กรอกข้อมูลเพื่อยืม</h2>
+            <form id="borrow-form">
+                <input type="hidden" id="borrow-item-id">
+                <div class="form-group">
+                    <label for="student-name">ชื่อ-นามสกุล:</label>
+                    <input type="text" id="student-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-id">รหัสนักเรียน (5 หลัก):</label>
+                    <input type="text" id="student-id" required pattern="\d{5}" title="กรุณากรอกรหัสนักเรียน 5 หลัก">
+                </div>
+                <div class="form-group">
+                    <label for="student-class">ห้อง:</label>
+                    <input type="text" id="student-class" required>
+                </div>
+                <button type="submit" class="submit-button">ยืนยันการยืม</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
